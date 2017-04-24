@@ -1,5 +1,5 @@
 #include "iostream"
-#include "sensor.h"
+#include "sensors.h"
 #include "i2c_configuration.h"
 
 using namespace std;
@@ -16,6 +16,14 @@ int main(void) {
   cout << "Temperature: " << temperature << endl;
 
   I2CConfiguration i2c_config(3);
+
+  TMP006 tmp006;
+
+  tmp006.print();
+
+  MCP9808 mcp9808;
+
+  mcp9808.print();
 
   return 0;
 }
