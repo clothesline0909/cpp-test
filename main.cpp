@@ -10,5 +10,9 @@ int main(void) {
   Sensor sensor;
   Sensor sensor2;
 
+  double temperature = sensor.get_reading();
+
+  cout << "Temperature: " << temperature << endl;
+
   return 0;
 }
