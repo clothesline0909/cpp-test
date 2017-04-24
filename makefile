@@ -1,8 +1,13 @@
-main: main.o
-	g++ -g -o main main.o
+CC=g++
+CFLAGS = -c -Wall -pthread
+
+main: main.o sensor.o
 
 main.o: main.cpp
-	g++ -g -c -pthread main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+sensor.o: sensor.cpp
+	$(CC) $(CFLAGS) sensor.cpp
 
 clean:
-	rm -rf *o
+	rm -rf main *o
