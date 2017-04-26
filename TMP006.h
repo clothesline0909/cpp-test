@@ -28,6 +28,10 @@ public:
   TMP006(double constant, int address);
 
   /**
+    Public member functions of the TMP006 class.
+  */
+
+  /**
     Method that returns the address of the sensor.
   */
   int get_address(void);
@@ -63,10 +67,21 @@ private:
   */
 
   // The calibration constant of the sensor.
-  double constant;
+  double calibration_constant;
 
   // The address of the sensor.
   int address;
+
+  /**
+    Private member functions of the TMP006 class.
+  */
+
+  /**
+    Method that converts the sensor and die temperatures into an on object temperature.
+    @param v_sense the voltage reading from the sensor.
+    @param t_die the temperature of the die.
+  */
+  double convert(double v_sense, double t_die);
 };
 
 #endif // _TMP006_H_

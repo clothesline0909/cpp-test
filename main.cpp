@@ -6,7 +6,7 @@ using namespace std;
 
 int main(void) {
 
-  double STEFAN_BOLTZMANN_CONST = 5.67e-8;
+  double STEFAN_BOLTZMANN_CONST = 5.7e-12;
   double emissivity = 0.95;
 
   int address = 0x40;
@@ -15,9 +15,9 @@ int main(void) {
 
   TMP006 tmp006(constant, address);
 
-  int other_address = tmp006.get_address();
+  double reading = tmp006.get_reading();
 
-  cout << "Address: " << other_address << endl;
+  cout << "Reading: " << reading << endl;
 
   return 0;
 }
