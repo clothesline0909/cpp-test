@@ -6,24 +6,16 @@ using namespace std;
 
 int main(void) {
 
-  cout << "Hello World!\n";
+  double STEFAN_BOLTZMANN_CONST = 5.67e-8;
+  double emissivity = 0.95;
 
-  Sensor sensor;
-  Sensor sensor2;
+  double constant = STEFAN_BOLTZMANN_CONST * emissivity;
 
-  double temperature = sensor.get_reading();
+  TMP006 tmp006(constant);
 
-  cout << "Temperature: " << temperature << endl;
+  double result = tmp006.get_constant();
 
-  I2CConfiguration i2c_config(3);
-
-  TMP006 tmp006;
-
-  tmp006.print();
-
-  MCP9808 mcp9808;
-
-  mcp9808.print();
+  cout << "Constant: " << result << endl;
 
   return 0;
 }
