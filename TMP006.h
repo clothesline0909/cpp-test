@@ -77,11 +77,21 @@ private:
   */
 
   /**
-    Method that converts the sensor and die temperatures into an on object temperature.
-    @param v_sense the voltage reading from the sensor.
-    @param t_die the temperature of the die.
+    Method that returns the sensor voltage.
   */
-  double convert(double v_sense, double t_die);
+  double get_sensor_voltage(void);
+
+  /**
+    Method that returns the die temperature.
+  */
+  double get_die_temperature(void);
+
+  /**
+    Method that converts the sensor and die temperatures into an on object temperature.
+    @param sensor_voltage the voltage reading from the sensor.
+    @param die_temperature the temperature of the die.
+  */
+  double convert(double sensor_voltage, double die_temperature);
 };
 
 #endif // _TMP006_H_

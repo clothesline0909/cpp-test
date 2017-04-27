@@ -23,21 +23,29 @@ int TMP006::get_address(void) {
 }
 
 double TMP006::get_reading(void) {
-  double v_sense = 3.5;
-  double t_die = 290.1;
+  double sensor_voltage = get_sensor_voltage();
+  double die_temperature = get_die_temperature();
 
-  double t_object = convert(v_sense, t_die);
+  double object_temp = convert(sensor_voltage, die_temperature);
 
-  return t_object;
+  return object_temp;
 }
 
-double TMP006::convert(double v_sense, double t_die) {
-  double t_object_power_4 = pow(t_die, 4) + (v_sense / this->calibration_constant);
+double TMP006::get_sensor_voltage(void) {
+  return 3.5;
+}
+
+double TMP006::get_die_temperature(void) {
+  return 290.1;
+}
+
+double TMP006::convert(double sensor_voltage, double die_temperature) {
+  double object_temp_power_4 = pow(die_temperature, 4) + (sensor_voltage / this->calibration_constant);
 
   // Handle negative reading.
-  if (t_object_power_4 < 0) {
+  if (object_temp_power_4 < 0) {
     return NULL;
   }
 
-  return pow(t_object_power_4, 1 / 4);
+  return pow(object_temp_power_4, 1.0 / 4);
 }
