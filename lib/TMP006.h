@@ -28,10 +28,6 @@ public:
   TMP006(double constant, int address);
 
   /**
-    Public member functions of the TMP006 class.
-  */
-
-  /**
     Method that returns the address of the sensor.
   */
   int get_address(void);
