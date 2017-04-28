@@ -1,6 +1,8 @@
 #ifndef _I2C_BUS_H_
 #define _I2C_BUS_H_
 
+#include "i2c_configuration.h"
+
 /**
   I2CBus class.
 
@@ -20,7 +22,7 @@ public:
     @param data_line the line used for I2C data transfer.
     @param clock_line the line user for I2C clock signal.
   */
-  I2CBus::I2CBus(I2CConfiguration config, int data_line, int_clock_line);
+  I2CBus(I2CConfiguration config, int data_line, int clock_line);
 
 /**
   Private members of the TMP006 class.

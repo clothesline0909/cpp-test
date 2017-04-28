@@ -25,17 +25,12 @@ public:
     @param address the address of the sensor.
     @param constant the calibration constant for the sensor.
   */
-  TMP006(double constant, int address);
+  TMP006(I2CBus bus, int address, double constant);
 
   /**
     Method that returns the address of the sensor.
   */
   int get_address(void);
-  
-  /**
-    Method that returns the sensor reading.
-  */
-  double get_reading(void);
 
 /**
   Private members of the TMP006 class.
@@ -65,11 +60,8 @@ private:
   // The calibration constant of the sensor.
   double calibration_constant;
 
-  // The address of the sensor.
-  int address;
-
   /**
-    Private member functions of the TMP006 class.
+    Member functions of the TMP006 class.
   */
 
   /**

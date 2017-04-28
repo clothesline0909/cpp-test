@@ -16,7 +16,7 @@ public:
   /**
     I2CConfiguration constructor.
   */
-  I2CConfiguration::I2CConfiguration(void);
+  I2CConfiguration(void);
 };
 
 #endif // _I2C_CONFIGURATION_H_

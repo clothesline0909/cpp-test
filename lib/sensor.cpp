@@ -3,10 +3,11 @@
 
 using namespace std;
 
-Sensor::Sensor() {
-  cout << "Constructing sensor object.\n";
-}
+/**
+  Public methods of the Sensor class.
+*/
 
-double Sensor::get_reading(void) {
-  return 1.5;
+Sensor::Sensor(I2CBus bus, int address) {
+  this->bus = bus;
+  this->address = address;
 }

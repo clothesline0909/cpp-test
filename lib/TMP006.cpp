@@ -17,9 +17,10 @@ static const int CONFIG_REGISTER = 0x02;
   Public methods of the TMP006 class.
 */
 
-TMP006::TMP006(double constant, int address) {
-  this->calibration_constant = constant;
+TMP006::TMP006(I2CBus bus, int address, double constant) {
+  this->bus = bus;
   this->address = address;
+  this->calibration_constant = constant;
 }
 
 int TMP006::get_address(void) {
