@@ -4,14 +4,18 @@
 
 using namespace std;
 
-// CONSTANTS
+/**
+  Constants of the TMP006 class.
+*/
 
 const string TMP006::NAME = "TMP006";
 static const int SENSOR_VOLTAGE_REGISTER = 0x00;
 static const int DIE_TEMP_REGISTER = 0x01;
 static const int CONFIG_REGISTER = 0x02;
 
-// PUBLIC METHODS
+/**
+  Public methods of the TMP006 class.
+*/
 
 TMP006::TMP006(double constant, int address) {
   this->calibration_constant = constant;
@@ -30,6 +34,10 @@ double TMP006::get_reading(void) {
 
   return object_temp;
 }
+
+/**
+  Private methods of the TMP006 class.
+*/
 
 double TMP006::get_sensor_voltage(void) {
   return 3.5;

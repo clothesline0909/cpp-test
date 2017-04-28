@@ -18,7 +18,7 @@ public:
 
     @param direction the direction of data flow (read/write).
   */
-  I2CTransaction::I2CTransaction(boolean direction);
+  I2CTransaction::I2CTransaction(void);
 }
 
 #endif // _I2C_TRANSACTION_H_

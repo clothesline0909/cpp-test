@@ -15,7 +15,7 @@ using namespace std;
 class TMP006 : public Sensor {
 
 /**
-  Public methods of the TMP006 class.
+  Public members of the TMP006 class.
 */
 public:
 
@@ -38,7 +38,7 @@ public:
   double get_reading(void);
 
 /**
-  Private methods of the TMP006 class.
+  Private members of the TMP006 class.
 */
 private:
 
@@ -84,6 +84,7 @@ private:
 
   /**
     Method that converts the sensor and die temperatures into an on object temperature.
+
     @param sensor_voltage the voltage reading from the sensor.
     @param die_temperature the temperature of the die.
   */
