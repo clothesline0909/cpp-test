@@ -8,6 +8,7 @@ using namespace std;
 */
 
 Sensor::Sensor(I2CBus bus, int address) {
+	cout << "Sensor constructor" << endl;
   this->bus = bus;
   this->address = address;
 }

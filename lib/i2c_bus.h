@@ -22,6 +22,7 @@ public:
     @param data_line the line used for I2C data transfer.
     @param clock_line the line user for I2C clock signal.
   */
+  I2CBus();
   I2CBus(I2CConfiguration config, int data_line, int clock_line);
 
 /**

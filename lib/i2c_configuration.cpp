@@ -2,3 +2,7 @@
 #include "iostream"
 
 using namespace std;
+
+I2CConfiguration::I2CConfiguration(){
+	cout << "I2CConfiguration constructor." << endl;
+}

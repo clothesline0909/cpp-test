@@ -26,7 +26,7 @@ public:
   /**
     Method that returns the sensor reading.
   */
-  double get_reading(void);
+  virtual double get_reading(void);
 
 /**
   Private members of the TMP006 class.
