@@ -18,6 +18,10 @@ int main(void) {
 
   TMP006 tmp006(i2c_bus, address, constant);
 
+  int test = tmp006.get_address();
+
+  cout << "Address: " << test << endl;
+
   double reading = tmp006.get_reading();
 
   cout << "Reading: " << reading << endl;

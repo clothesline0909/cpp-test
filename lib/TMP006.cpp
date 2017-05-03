@@ -17,15 +17,7 @@ static const int CONFIG_REGISTER = 0x02;
   Public methods of the TMP006 class.
 */
 
-TMP006::TMP006(I2CBus bus, int address, double constant) : Sensor(bus, address) {
-  cout << "TMP006 constructor." << endl;
-  this->calibration_constant = constant;
-}
-
-int TMP006::get_address(void) {
-  //return this->address;
-  return 0x00;
-}
+TMP006::TMP006(I2CBus bus, int address, double constant) : Sensor(bus, address), calibration_constant(constant) {}
 
 double TMP006::get_reading(void) {
   double sensor_voltage = get_sensor_voltage();

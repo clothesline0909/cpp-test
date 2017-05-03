@@ -28,11 +28,6 @@ public:
   TMP006(I2CBus bus, int address, double constant);
 
   double get_reading(void);
-  
-  /**
-    Method that returns the address of the sensor.
-  */
-  int get_address(void);
 
 /**
   Private members of the TMP006 class.

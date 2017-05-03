@@ -24,9 +24,19 @@ public:
   Sensor(I2CBus bus, int address);
 
   /**
+    Method that returns the sensor bus.
+  */
+  I2CBus get_bus(void);
+
+  /**
+    Method that returns the sensor address.
+  */
+  double get_address(void);
+
+  /**
     Method that returns the sensor reading.
   */
-  virtual double get_reading(void);
+  virtual double get_reading(void) = 0;
 
 /**
   Private members of the TMP006 class.
