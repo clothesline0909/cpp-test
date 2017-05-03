@@ -10,6 +10,8 @@
 #ifndef _I2C_TRANSACTION_H_
 #define _I2C_TRANSACTION_H_
 
+#include "i2c_bus.h"
+
 /**
   I2CTransaction class.
 
