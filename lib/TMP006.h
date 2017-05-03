@@ -1,7 +1,16 @@
+/**
+  TMP006.h
+  Purpose: Reads values from a TMP006 sensor.
+
+  @author Brett Clark
+  @version 1.0
+  @date 3/5/2017
+*/
+
 #ifndef _TMP006_H_
 #define _TMP006_H_
 
-#include "sensor.h"
+#include "I2CSensor.h"
 #include "string"
 #include "iostream"
 
@@ -10,9 +19,9 @@ using namespace std;
 /**
   TMP006 class.
 
-  This describes a single sensor.
+  This describes a single TMP006 sensor.
 */
-class TMP006 : public Sensor {
+class TMP006 : public I2CSensor {
 
 /**
   Public members of the TMP006 class.
@@ -22,11 +31,19 @@ public:
   /**
     TMP006 constructor.
 
-    @param address the address of the sensor.
-    @param constant the calibration constant for the sensor.
+    @param bus The bus that the sensor is connected to.
+    @param address The address of the sensor.
+    @param constant The calibration constant for the sensor.
+    @return The TMP006 object.
   */
   TMP006(I2CBus bus, int address, double constant);
 
+  /**
+    Method that returns the TMP006 reading. 
+    This is an implementation of the virtual function in I2CSensor.
+
+    @return The sensor reading.
+  */
   double get_reading(void);
 
 /**
@@ -38,24 +55,29 @@ private:
     Constants of the TMP006 class.
   */
 
-  // The human-readable type of the sensor.
-  static const string NAME;
-
-  // The register in which the TMP006 sensor voltage is stored.
+  /**
+    The register in which the TMP006 sensor voltage is stored.
+  */
   static const int SENSOR_VOLTAGE_REGISTER;
 
-  // The register in which the TMP006 die temperature is stored.
+  /**
+    The register in which the TMP006 die temperature is stored.
+  */
   static const int DIE_TEMP_REGISTER;
 
-  // The register used to configure the TMP006 sensor.
+  /**
+    The register used to configure the TMP006 sensor.
+  */
   static const int CONFIG_REGISTER;
 
   /**
     Member variables of the TMP006 class.
   */
 
-  // The calibration constant of the sensor.
-  double calibration_constant;
+  /**
+    The calibration constant of the I2CSensor.
+  */
+  double constant;
 
   /**
     Member functions of the TMP006 class.
@@ -63,21 +85,26 @@ private:
 
   /**
     Method that returns the sensor voltage.
+
+    @return The sensor voltage.
   */
   double get_sensor_voltage(void);
 
   /**
     Method that returns the die temperature.
+
+    @return The die temperature.
   */
   double get_die_temperature(void);
 
   /**
     Method that converts the sensor and die temperatures into an on object temperature.
 
-    @param sensor_voltage the voltage reading from the sensor.
-    @param die_temperature the temperature of the die.
+    @param sensor_voltage The voltage reading from the sensor.
+    @param die_temperature The temperature of the die.
+    @return The object temperature.
   */
-  double convert(double sensor_voltage, double die_temperature);
+  double get_object_temperature(double sensor_voltage, double die_temperature);
 };
 
 #endif // _TMP006_H_

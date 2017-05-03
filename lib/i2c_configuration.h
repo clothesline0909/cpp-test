@@ -1,3 +1,12 @@
+/**
+  I2CConfiguration.h
+  Purpose: The I2C configuration that is used on the board.
+
+  @author Brett Clark
+  @version 1.0
+  @date 3/5/2017
+*/
+
 #ifndef _I2C_CONFIGURATION_H_
 #define _I2C_CONFIGURATION_H_
 
@@ -9,12 +18,14 @@
 class I2CConfiguration {
 
 /**
-  Public methods of the I2CConfiguration class.
+  Public members of the I2CConfiguration class.
 */
 public:
 
   /**
     I2CConfiguration constructor.
+
+    @return The I2CConfiguration object.
   */
   I2CConfiguration(void);
 };
