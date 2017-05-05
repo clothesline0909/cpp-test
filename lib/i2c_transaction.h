@@ -1,5 +1,5 @@
 /**
-  I2CTransaction.h
+  i2c_transaction.h
   Purpose: Carries out an I2C transaction between master and slave.
 
   @author Brett Clark

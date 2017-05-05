@@ -1,5 +1,5 @@
 /**
-  I2CSensor.h
+  i2c_sensor.h
   Purpose: Abstract class containing shared functionality of all I2C sensors.
 
   @author Brett Clark

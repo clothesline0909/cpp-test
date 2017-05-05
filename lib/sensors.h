@@ -10,6 +10,6 @@
 #ifndef _SENSORS_H_
 #define _SENSORS_H_
 
-#include "TMP006.h"
+#include "tmp006.h"
 
 #endif // _SENSORS_H_

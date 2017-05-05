@@ -1,5 +1,5 @@
 /**
-  I2CConfiguration.h
+  i2c_configuration.h
   Purpose: The I2C configuration that is used on the board.
 
   @author Brett Clark

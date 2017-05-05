@@ -1,5 +1,5 @@
 /**
-  TMP006.h
+  tmp006.h
   Purpose: Reads values from a TMP006 sensor.
 
   @author Brett Clark
@@ -10,7 +10,7 @@
 #ifndef _TMP006_H_
 #define _TMP006_H_
 
-#include "I2CSensor.h"
+#include "i2c_sensor.h"
 #include "string"
 #include "iostream"
 

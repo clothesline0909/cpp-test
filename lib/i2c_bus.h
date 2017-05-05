@@ -1,5 +1,5 @@
 /**
-  I2CBus.h
+  i2c_bus.h
   Purpose: Represents an I2C bus.
 
   @author Brett Clark

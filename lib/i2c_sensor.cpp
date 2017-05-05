@@ -1,4 +1,4 @@
-#include "I2CSensor.h"
+#include "i2c_sensor.h"
 #include "iostream"
 
 using namespace std;

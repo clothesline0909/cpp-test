@@ -1,4 +1,4 @@
-#include "TMP006.h"
+#include "tmp006.h"
 #include "cmath"
 #include "iostream"
 
