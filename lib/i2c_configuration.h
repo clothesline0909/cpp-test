@@ -23,11 +23,53 @@ class I2CConfiguration {
 public:
 
   /**
+     Public constants of the I2CConfiguration class.
+  */
+
+  /**
+    This defines the possible transfer modes for the I2C.
+  */
+  enum transfer_modes {
+    BLOCKING_MODE
+  };
+
+  /**
+    This defines the possible bit rates for the I2C.
+  */
+  enum bit_rates {
+    RATE_100_KHZ,
+    RATE_400_KHZ
+  };
+
+  /**
     I2CConfiguration constructor.
 
     @return The I2CConfiguration object.
   */
-  I2CConfiguration(void);
+  I2CConfiguration(int transfer_mode, int bit_rate);
+
+/**
+  Private members of the I2CConfiguration class.
+*/
+private:
+  
+  /**
+    Member variables of the I2CConfiguration class.
+  */
+
+  /**
+    The transfer mode used in the I2C. 
+    Option are listed in transfer_modes enum.
+  */
+  int transfer_mode;
+
+  /**
+    The bit rate used in the I2C. 
+    Option are listed in bit_rates enum.
+  */
+  int bit_rate;
+
+
 };
 
 #endif // _I2C_CONFIGURATION_H_
