@@ -33,6 +33,11 @@ public:
   */
   I2CBus(I2CConfiguration config, int index);
 
+  /**
+    Function that opens the I2C bus.
+  */
+  void open(void);
+
 /**
   Private members of the I2CBus class.
 */
