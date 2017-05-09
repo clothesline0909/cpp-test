@@ -28,25 +28,10 @@ public:
     I2CBus constructor.
 
     @param config The I2CConfiguration used by the bus.
-    @param data_address The line used for I2C data transfer.
-    @param clock_address The line user for I2C clock signal.
+    @param index The index of the I2C bus on the board.
     @return The I2CBus object.
   */
-  I2CBus(I2CConfiguration config, int data_address, int clock_address);
-
-  /**
-    Method that returns the I2C bus data line address.
-
-    @return The I2C bus data line address.
-  */
-  int get_data_address(void);
-
-  /**
-    Method that returns the I2C bus clock line address.
-
-    @return The I2C bus clock line address.
-  */
-  int get_clock_address(void);
+  I2CBus(I2CConfiguration config, int index);
 
 /**
   Private members of the I2CBus class.
@@ -63,14 +48,9 @@ private:
   I2CConfiguration config;
 
   /**
-    The I2C bus data line address.
+    The index of the IC bus on the board.
   */
-  int data_address;
-
-  /**
-    The I2C bus clock line address.
-  */
-  int clock_address;
+  int index;
 };
 
 #endif // _I2C_BUS_H_
